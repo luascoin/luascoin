@@ -94,16 +94,16 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0xf9;
-        pchMessageStart[1] = 0xbe;
-        pchMessageStart[2] = 0xb4;
-        pchMessageStart[3] = 0xd9;
+        pchMessageStart[0] = 0xd4;
+        pchMessageStart[1] = 0xc1;
+        pchMessageStart[2] = 0xad;
+        pchMessageStart[3] = 0x10;
         nDefaultPort = 8808;
         nPruneAfterHeight = 100000;
-        m_assumed_blockchain_size = 280;
-        m_assumed_chain_state_size = 4;
+        m_assumed_blockchain_size = 0;
+        m_assumed_chain_state_size = 0;
 
-        genesis = CreateGenesisBlock(1231006505, 2083236893, 0x1d00ffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1581341820, 2083236893, 0x1d00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"));
         assert(genesis.hashMerkleRoot == uint256S("0x621d7395fb0cfa4cf6e6e5c783c620587ec4779482a3cf6193ef5e39a432f206"));
@@ -119,8 +119,8 @@ public:
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,0);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,128);
-        base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB2, 0x1E};
-        base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAD, 0xE4};
+        base58Prefixes[EXT_PUBLIC_KEY] = {0xD4, 0xC1, 0xB4, 0xD4};
+        base58Prefixes[EXT_SECRET_KEY] = {0x10, 0xAD, 0xAD, 0xEA};
 
         bech32_hrp = "bc";
 
